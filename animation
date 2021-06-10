@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+	<title>animations</title>
+	<style>
+	body{
+				background: linear-gradient(45deg,cyan,orangered,lightgreen);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment:fixed;
+			}
+     
+	 #rect {
+animation-name:rainbow;
+animation-duration:6s;
+animation-direction:alternate;
+animation-iteration-count:infinite;
+margin-left:30%;
+margin-right:35%;
+margin-top:28%;
+height:70px;
+position:relative;
+border-radius:12px;
+transform:skewX(22deg);
+letter-spacing:2px;
+  }/*@keyframes <name of animation>*/
+@keyframes rainbow{
+  0%{
+    background-color:darkblue;
+    left:0px;
+  /*to make movement use top bottom left or right property with all %'s and values in px*/
+  }
+  25%{
+    background-color:red;
+    left:30px;
+  }
+  50%{
+    background-color:green;
+    left:70px;
+  }
+  75%{
+    background-color:aqua;
+    left:110px;
+  }
+  100%{
+    background-color:yellow;
+    left:140px;
+  }
+}
+
+  button {
+    border-radius: 9px;
+    color: white;
+    background-color: #0F5897;
+    padding:15px;
+    vertical-align:bottom;
+  }
+    button:hover {
+      border-radius: 19px;
+      outline-color: #0F5899;
+    animation-name: backgroundcolor;
+    animation-duration: 1.5s;
+    animation-fill-mode:forwards;
+  }
+/* keep the button to stay highlighted (use in hover)*/
+@keyframes backgroundcolor
+{
+  25%{
+    background-color:gray;
+  }
+  50%{
+    background-color:green;
+  }
+  100%{
+    background-color:#4791d0;
+  }
+}
+#ball {
+    margin-top:50%;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    left: 20%;
+    border-radius: 45%;
+    animation-name: fade;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-out;
+  }
+
+  @keyframes fade {
+    from {
+      left: 20%;
+      opacity:1;
+    }
+    to {
+      left: 60%;
+      opacity:0.2;
+    }
+  }
+
+  #bounce{
+    background-color:orangered;
+    position: absolute;
+    top: 10%;
+height: 100px;
+width:101px;
+border-radius: 50%;
+margin-left: 14px;
+animation-name:bounce;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+}
+@keyframes bounce{
+  0%{
+    top:10%;
+    height: 100px;
+    width: 101px;
+  }
+25%{
+  top:15%;
+  height: 93px;
+  width: 102px;
+}
+50%{
+  top:30%;
+  height: 70px;
+  width: 112px;
+}
+}
+</style>
+</head>
+<body>
+ please hover over this button and see the <mark>change<!--mark is to mark the imp text or to highlight.--></mark> by 2 sec. <br><button>Register</button>
+  <div id="bounce">&#128508;</div>
+  <pre>
+<div id="ball"> <img src="https://pngimg.com/uploads/football/football_PNG52788.png" height="90px" width="85px" title="football"><br>this is a ball moving left and right.</div>
+<br>
+<p id="rect">This is an animation of rainbow changing colour.</p>
+ </body>
+</html>
